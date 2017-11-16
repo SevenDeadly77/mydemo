@@ -18,3 +18,16 @@
       });
       return false;
     }));
+
+$('#logout').click(function(){
+  $.ajax({
+    type:'post',
+    url:'/api/logout',
+    dataType:'json',
+    success:function(data){
+      if(data.code == 200){
+        location.href = '/login';
+      }
+    }
+  })
+})
